@@ -1,5 +1,3 @@
-
-# Complete the compareTriplets function below.
 def compareTriplets(a, b):
     alice = bob = 0
     for x in range(len(a)):
