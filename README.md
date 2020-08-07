@@ -11,4 +11,4 @@
 
 ### Pin
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=mahmudx&repo=100-Days-Challange&theme=dracula)](https://github.com/anuraghazra/github-readme-stats)
+[![100 Days of Code Challange](https://github-readme-stats.vercel.app/api/pin/?username=mahmudx&repo=100-Days-Challange&theme=dracula)](https://github.com/MahmudX/100-Days-Challange)
