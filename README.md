@@ -8,6 +8,3 @@
 
 ![Python](https://img.shields.io/badge/-Python%203-Black?labelColor=EEED09&style=flat-square&logo=Python)
 ![C Sharp](https://img.shields.io/badge/-C%20Sharp-black?labelColor=239120&style=flat-square&logo=C+Sharp)
-### Pin
-
-[![100 Days of Code Challange](https://github-readme-stats.vercel.app/api/pin/?username=mahmudx&repo=100-Days-Challange&theme=dracula)](https://github.com/MahmudX/100-Days-Challange)
