@@ -8,3 +8,6 @@
 
 ![Python](https://img.shields.io/badge/-Python%203-Black?labelColor=EEED09&style=flat-square&logo=Python)
 ![C Sharp](https://img.shields.io/badge/-C%20Sharp-black?labelColor=239120&style=flat-square&logo=C+Sharp)
+
+#### Reple.it
+[![Run on Repl.it](https://repl.it/badge/github/MahmudX/100-Days-Challange)](https://repl.it/github/MahmudX/100-Days-Challange)
