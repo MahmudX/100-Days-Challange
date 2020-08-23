@@ -28,11 +28,11 @@ int main()
 
     if (isFound)
     {
-        cout << "\nItem found and deleted successfully." << endl;
-        cout << "\nNew array is : ";
+        cout << "Item found and deleted successfully." << endl;
+        cout << "New array is : ";
         for (int i = 0; i < n - 1; i++)
             cout << arr[i] << " ";
     }
     else
-        cout << "\nItem wasn't found." << endl;
+        cout << "Item wasn't found." << endl;
 }
