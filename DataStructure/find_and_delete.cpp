@@ -2,41 +2,37 @@
 using namespace std;
 int main()
 {
-    int sizeOfArray, temp, item, counter = 0;
-    cout << "Enter Array size:\n";
-    cin >> sizeOfArray;
-    int arr[sizeOfArray + 1], i, j;
-    cout << "\nEnter Array:\n";
-    for (i = 0; i < sizeOfArray; i++)
+    int n, item, counter = 0;
+    bool isFound = false;
+
+    cout << "Enter Array size: ";
+    cin >> n;
+    int arr[n + 1];
+
+    cout << "Enter Array: ";
+    for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
-    cout << "\nEnter value of search :\n";
 
-    cin >>        item;
-    for (i = 0; i < sizeOfArray; i++)
-    {
+    cout << "Enter value of search : ";
+    cin >> item;
+
+    for (int i = 0; i < n; i++)
         if (arr[i] == item)
         {
-            for (j = i; j < sizeOfArray - 1; j++)
-            {
+            isFound = true;
+            for (int j = i; j < n - 1; j++)
                 arr[j] = arr[j + 1];
-                counter++;
-            }
         }
-    }
-    if (counter == 0)
+
+    if (isFound)
     {
-        cout << "\nItem isn't found.";
+        cout << "\nItem found and deleted successfully." << endl;
+        cout << "\nNew array is : ";
+        for (int i = 0; i < n - 1; i++)
+            cout << arr[i] << " ";
     }
     else
-    {
-        cout << "\nItem found and deleted successfully.\n";
-        cout << "\nNew array is : ";
-        for (j = 0; j < sizeOfArray - 1; j++)
-        {
-            cout << arr[j] << " ";
-        }
-    }
-    cout << endl;
+        cout << "\nItem wasn't found." << endl;
 }

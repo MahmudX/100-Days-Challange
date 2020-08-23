@@ -1,55 +1,42 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    int ele,i,j,ctr,sum=0;
-    cout<<"Enter the number of element you want : ";
-    cin>>ele;
+    int n, counter = 0, sum = 0;
 
-    int arr[ele],uni[ele];
+    cout << "Enter array length: ";
+    cin >> n;
 
-    cout<<endl<<endl;
+    int arr[n], unique[n];
 
-    cout<<"Enter the elements you want to work with : ";
-    for(i=0; i<ele; i++)
+    cout << "Input the array: ";
+    for (int i = 0; i < n; i++)
     {
-        cin>>arr[i];
-        uni[i]=-1;
-    }
-
-    cout<<endl<<endl;
-
-    for(i=0;i<ele;i++)
-    {
-        ctr = 1;
-        for(j=i+1;j<ele;j++)
+        bool isExists = false;
+        cin >> arr[i];
+        for (int j = 0; j < counter; j++)
         {
-            if( arr[i] == arr[j] )
+            if (unique[j] == arr[i])
             {
-                ctr++;
-                uni[j]=0;
+                isExists = true;
+                break;
             }
         }
-        if( uni[i] != 0)
+        if (!isExists)
         {
-            uni[i] = ctr;
+            unique[counter] = arr[i];
+            counter++;
         }
     }
-
-    cout<<"The unique elements are : ";
-    for(i=0; i<ele; i++)
+    cout << "The unique elements are : [";
+    for (int i = 0; i < counter; i++)
     {
-        if(uni[i] == 1)
-        {
-            cout<< arr[i] <<" ";
-            sum+=arr[i];
-        }
+        cout << unique[i] << " ";
+        sum += unique[i];
     }
-
-    cout<<endl<<endl;
-
-    cout<<"The sum of the unique element is : "<<sum<<endl<<endl;
+    cout << "]";
+    cout << "The sum of the unique elements is: " << sum << endl;
 
     return 0;
 }

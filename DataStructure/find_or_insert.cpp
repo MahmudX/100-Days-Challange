@@ -1,88 +1,51 @@
 #include <iostream>
-#include <stdlib.h>
 using namespace std;
-int main ()
+int main()
 {
-    int n,i;
-    cout<<"Enter The size of your array : ";
-    cin>>n;
+    int n, start, end, mid, item, position;
+    cout << "Enter The size of your array : ";
+    cin >> n;
 
     int arr[n];
 
-    cout<<"Enter a shorted array : ";
-    for(i=0; i<n; i++)
+    cout << "Enter a shorted array : ";
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    cout << "Enter search item: ";
+    cin >> item;
+
+    start = 0;
+    end = n - 1;
+    mid = int(start + end) / 2;
+
+    while (start <= end && arr[mid] != item)
     {
-        cin>>arr[i];
-    }
-    cout<<endl<<"The array that was created is :";
-    for(i=0; i<n; i++)
-    {
-        cout<<"\t"<<arr[i];
-    }
-
-    //____________BinarySearch____________
-    int beg,end,mid,item;
-
-    cout<<"\n\nEnter the element you want to search : ";
-    cin>>item;
-
-    beg=0;
-    end=n-1;
-    mid= int (beg+end)/2;
-
-
-
-    while (beg<=end && arr[mid]!=item)
-    {
-        if(item>arr[mid])
-            beg=mid+1;
+        if (item > arr[mid])
+            start = mid + 1;
         else
-            end=mid-1;
-
-        mid= (beg+end)/2;
+            end = mid - 1;
+        mid = (start + end) / 2;
     }
 
-    if(arr[mid]==item)
-        cout<<"\n\nSearch successful item found at  Array index  no "<<mid<<endl;
+    if (arr[mid] == item)
+        cout << "Item found at  Array index  no " << mid << endl;
     else
     {
-        int pos;
-        cout<<endl<<" \a !!!! The element is not in the array !!!! \a"<<endl;
+        if (item > arr[mid])
+            mid += 1;
+        else if (mid > 0 && arr[mid] > item)
+            mid -= 1;
+        position = mid;
 
-        //____________Position_______
+        for (int i = n - 1; i >= position; i--)
+            arr[i + 1] = arr[i];
 
-        for(i=0; i<n; i++)
-        {
-            if(item>arr[i])
-            {
-            }
-            else
-            {
-                break;
-            }
-        }
-         pos=i;
-
-        //______________Insertion___________
-
-
-        for(i=n-1; i>=pos; i--)
-        {
-            arr[i+1]=arr[i];
-        }
-
-        arr[pos]=item;
-        n=n+1;
-
-        cout<<endl<<"After adding the element  new Array is  : ";
-        for(i=0; i<n; i++)
-        {
-            cout<<"\t"<<arr[i];
-        }
-
+        arr[position] = item;
+        n = n + 1;
+        cout << "Item wasn't found. New item was inserted successfully." << endl;
+        cout << "After adding the element new Array is: ";
+        for (int i = 0; i < n; i++)
+            cout << " " << arr[i];
     }
-
-    cout<<endl<<endl<<endl<<endl;
-
-    return 0;
 }
