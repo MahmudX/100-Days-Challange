@@ -1,3 +1,5 @@
+# https://codeforces.com/contest/1535/problem/A
+
 def GetGreater(twinList: list) -> int:
     if twinList[0] > twinList[1]:
         return twinList[0]
@@ -19,4 +21,3 @@ for _ in range(test_case):
         print("Yes")
     else:
         print("No")
-    
